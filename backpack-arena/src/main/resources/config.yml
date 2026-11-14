@@ -1,0 +1,17 @@
+# Настройки плагина. Баланс — в heroes.yml, items.yml, recipes.yml, relics.yml, economy.yml, combat.yml.
+
+# Скорость повтора боя: 1.0 — реальное время симуляции, 2.0 — вдвое быстрее.
+replay-speed: 1.5
+# Пауза перед началом повтора, тики (20 = 1 с)
+battle-start-delay: 30
+
+# Опыт аккаунта на один уровень
+xp-per-level: 100
+
+# Точки арены. Ставятся командой /ba setarena a|b. Пусто — игроки остаются на месте.
+arena:
+  spawn-a: ~
+  spawn-b: ~
+
+database:
+  file: data.db

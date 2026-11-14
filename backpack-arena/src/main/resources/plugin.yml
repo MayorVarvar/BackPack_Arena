@@ -1,0 +1,18 @@
+name: BackpackArena
+version: '${version}'
+main: dev.backpackarena.plugin.BackpackArenaPlugin
+api-version: '1.21'
+description: Автобаттлер с рюкзаком-инвентарём для Minecraft
+authors: [sozonovskijmatvej]
+
+commands:
+  ba:
+    description: Backpack Arena
+    usage: /ba help
+    aliases: [arena, backpack]
+
+permissions:
+  backpackarena.play:
+    default: true
+  backpackarena.admin:
+    default: op

@@ -1,0 +1,29 @@
+# Параметры автобоя.
+tick: 0.1               # шаг симуляции, с
+max-duration: 60        # после — победа по доле HP
+status-interval: 1.0    # как часто тикают Ожог/Яд и спадают статусы
+fatigue-start: 30       # с этой секунды обе стороны получают растущий урон усталости
+fatigue-damage: 1       # урон за тик усталости × номер тика
+min-speed: 0.25         # множитель скорости атак (Холод/Ускорение) ограничен
+max-speed: 3.0
+max-logged-events: 400
+
+status:
+  burn-damage: 1        # урон за стак Ожога (через броню), стак спадает на burn-decay
+  burn-decay: 1
+  burn-cap: 60
+  poison-damage: 1      # Яд игнорирует броню и не спадает
+  poison-cap: 50
+  chill-slow: 0.02      # −2% скорости за стак Холода
+  chill-decay: 0.5
+  chill-cap: 50
+  haste-speed: 0.02     # +2% скорости за стак Ускорения
+  haste-decay: 0.5
+  haste-cap: 50
+  stun-seconds: 0.5     # 1 стак Оглушения = 0.5 с
+  stun-cap: 3
+  empower-damage: 1     # +1 урон за стак Усиления
+  empower-cap: 20
+  thorns-cap: 30
+  lifesteal-cap: 20
+  armor-cap: 300

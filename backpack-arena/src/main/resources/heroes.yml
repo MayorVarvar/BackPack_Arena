@@ -1,0 +1,116 @@
+# Герои режима. Все числа можно менять без пересборки: /ba reload
+# stats:
+#   max-hp, start-armor, max-stamina, stamina-regen (в сек), max-mana, mana-regen (в сек),
+#   crit-chance (0..1), crit-multiplier (2.0 = x2), sale-chance (шанс скидки в магазине)
+# ability.type: IRON_GUARD | ELEMENT_SWITCH | SWARM | VOLLEY — см. docs/TZ.md
+heroes:
+  bastion:
+    name: "Бастион"
+    title: "Несокрушимый страж"
+    description: "Танк: копит броню, блокирует удары и возвращает урон шипами."
+    material: IRON_CHESTPLATE
+    stats:
+      max-hp: 60
+      start-armor: 15
+      max-stamina: 5
+      stamina-regen: 1.0
+      max-mana: 0
+      mana-regen: 0
+      crit-chance: 0.0
+      crit-multiplier: 2.0
+      sale-chance: 0.10
+    ability:
+      type: IRON_GUARD
+      name: "Железная стойка"
+      description: "Каждые 12 с: +20 брони и 4 с отражает 50% урона, поглощённого бронёй."
+      cooldown: 12
+      params:
+        armor: 20
+        duration: 4
+        reflect: 0.5
+    starting-bags: [leather_pouch, leather_pouch]
+    starting-items: [wooden_sword, leather_cap]
+
+  elma:
+    name: "Эльма"
+    title: "Повелительница стихий"
+    description: "Маг: копит ману, поджигает и замораживает врага."
+    material: BLAZE_POWDER
+    stats:
+      max-hp: 50
+      start-armor: 0
+      max-stamina: 5
+      stamina-regen: 1.0
+      max-mana: 20
+      mana-regen: 1.0
+      crit-chance: 0.0
+      crit-multiplier: 2.0
+      sale-chance: 0.10
+    ability:
+      type: ELEMENT_SWITCH
+      name: "Смена стихий"
+      description: "Каждые 6 с меняет стихию. Огонь: удары оружием дают 1 Ожог. Лёд: 1 Холод."
+      cooldown: 6
+      params:
+        burn: 1
+        chill: 1
+    starting-bags: [leather_pouch, leather_pouch]
+    starting-items: [blaze_rod, amethyst_shard]
+
+  bortnik:
+    name: "Бортник"
+    title: "Хранитель улья"
+    description: "Рой: питомцы атакуют без выносливости и отравляют."
+    material: BEE_NEST
+    stats:
+      max-hp: 50
+      start-armor: 0
+      max-stamina: 5
+      stamina-regen: 1.0
+      max-mana: 0
+      mana-regen: 0
+      crit-chance: 0.0
+      crit-multiplier: 2.0
+      sale-chance: 0.10
+    ability:
+      type: SWARM
+      name: "Улей"
+      description: "Каждые 10 с выпускает 2 пчёл на 6 с. Пчёлы кусают на 2–3 и дают 1 Яд."
+      cooldown: 10
+      params:
+        count: 2
+        duration: 6
+        interval: 1.5
+        damage-min: 2
+        damage-max: 3
+        poison: 1
+    starting-bags: [leather_pouch, leather_pouch]
+    starting-items: [bee, honey_bottle]
+
+  silva:
+    name: "Сильва"
+    title: "Лесная охотница"
+    description: "Стрелок: точность, криты и залпы стрел."
+    material: BOW
+    stats:
+      max-hp: 45
+      start-armor: 0
+      max-stamina: 5
+      stamina-regen: 1.0
+      max-mana: 0
+      mana-regen: 0
+      crit-chance: 0.10
+      crit-multiplier: 2.0
+      sale-chance: 0.10
+    ability:
+      type: VOLLEY
+      name: "Лесной залп"
+      description: "Каждые 8 с — 3 стрелы по 3 урона +1 за каждый дальнобойный предмет."
+      cooldown: 8
+      params:
+        arrows: 3
+        damage: 3
+        per-ranged: 1
+        crit: 0.05
+    starting-bags: [leather_pouch, leather_pouch]
+    starting-items: [bow, apple]

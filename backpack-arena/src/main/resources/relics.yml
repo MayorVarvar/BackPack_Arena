@@ -1,0 +1,52 @@
+# Реликвии — пассивные бонусы на весь матч. Выбор 1 из N в раунде economy.match.relic-round.
+# modifiers: max-hp, start-armor, mana-regen, burn-bonus, pet-damage (доля), lifesteal,
+#            accuracy (доля), crit (доля), stamina-regen, thorns
+relics:
+  mana_crystal:
+    name: "Кристалл маны"
+    description: "+1 к восстановлению маны в секунду."
+    material: AMETHYST_CLUSTER
+    rarity: EPIC
+    modifiers: {mana-regen: 1.0}
+  blood_amulet:
+    name: "Кровавый амулет"
+    description: "+2 Вампиризма в начале боя."
+    material: REDSTONE
+    rarity: EPIC
+    modifiers: {lifesteal: 2}
+  iron_idol:
+    name: "Железный идол"
+    description: "+20 брони в начале боя."
+    material: IRON_BLOCK
+    rarity: EPIC
+    modifiers: {start-armor: 20}
+  swarm_relic:
+    name: "Реликвия роя"
+    description: "Питомцы наносят +25% урона."
+    material: HONEY_BLOCK
+    rarity: EPIC
+    modifiers: {pet-damage: 0.25}
+  forest_charm:
+    name: "Лесной талисман"
+    description: "+10% точности и +5% крита."
+    material: OAK_SAPLING
+    rarity: EPIC
+    modifiers: {accuracy: 0.10, crit: 0.05}
+  fire_crystal:
+    name: "Кристалл огня"
+    description: "Каждое наложение Ожога даёт +1 стак."
+    material: MAGMA_CREAM
+    rarity: EPIC
+    modifiers: {burn-bonus: 1}
+  heart_stone:
+    name: "Камень сердца"
+    description: "+15 к максимальному здоровью."
+    material: RED_GLAZED_TERRACOTTA
+    rarity: EPIC
+    modifiers: {max-hp: 15}
+  second_wind:
+    name: "Второе дыхание"
+    description: "+0.3 к восстановлению выносливости."
+    material: FEATHER
+    rarity: EPIC
+    modifiers: {stamina-regen: 0.3}

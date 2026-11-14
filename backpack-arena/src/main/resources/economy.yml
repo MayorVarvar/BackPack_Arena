@@ -1,0 +1,40 @@
+# Экономика матча. Значения — стартовое предложение из справочника баланса, требуют плейтеста.
+income:
+  start-gold: 10        # золото в раунде 1
+  base: 8               # доход в раунде 2
+  growth: 1             # +к доходу за каждый следующий раунд
+  max: 14               # потолок базового дохода
+  win-bonus: 2          # за победу в прошлом раунде
+  streak-bonus: 1       # за каждую победу подряд
+  streak-cap: 3
+
+shop:
+  size: 5
+  sell-ratio: 0.5       # продажа за 50% (округление вверх)
+  sale-discount: 0.33   # скидка −33% (шанс — у героя, sale-chance)
+  reroll-costs: [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3]   # последний повторяется
+  craft-hammer-base: 5  # ускоренный крафт: 5, 10, 15...
+  craft-hammer-step: 5
+  # Веса редкостей с указанного раунда (раунд: {редкость: вес})
+  rarity-weights:
+    1:  {COMMON: 80, RARE: 20}
+    3:  {COMMON: 60, RARE: 30, EPIC: 10, UNIQUE: 3}
+    5:  {COMMON: 45, RARE: 35, EPIC: 15, LEGENDARY: 5, UNIQUE: 5}
+    7:  {COMMON: 30, RARE: 35, EPIC: 25, LEGENDARY: 10, UNIQUE: 5}
+    9:  {COMMON: 20, RARE: 30, EPIC: 30, LEGENDARY: 15, MYTHIC: 5, UNIQUE: 5}
+    11: {COMMON: 10, RARE: 25, EPIC: 35, LEGENDARY: 20, MYTHIC: 10, UNIQUE: 5}
+    13: {COMMON: 5, RARE: 20, EPIC: 35, LEGENDARY: 25, MYTHIC: 15, UNIQUE: 5}
+
+match:
+  lives: 4
+  wins-to-finish: 10
+  relic-round: 5        # в начале этого раунда — выбор реликвии
+  relic-choices: 3
+  max-relics: 3
+  storage-size: 27      # временное хранилище = основной инвентарь игрока
+
+rewards:
+  xp-per-win: 20
+  xp-per-match: 30
+  gems-per-win: 1
+  gems-full-run: 10     # за прохождение до wins-to-finish

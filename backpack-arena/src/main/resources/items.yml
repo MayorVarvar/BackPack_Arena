@@ -1,0 +1,458 @@
+# Предметы режима.
+# rarity:   COMMON | RARE | EPIC | LEGENDARY | MYTHIC | UNIQUE
+# category: WEAPON | ARMOR | POTION | FOOD | PET | MAGIC | MATERIAL | ACCESSORY | BAG
+# material: иконка — имя Material из Paper (https://jd.papermc.io/paper/1.21.4/org/bukkit/Material.html)
+# shape:    строки из X и точек; для сумок — клетки, которые сумка даёт рюкзаку
+# hero:     id героя (только ему) — без поля предмет общий
+# in-shop:  false — только крафт
+# weapon:   damage: [мин, макс], cooldown (с), stamina, accuracy (0..1), crit, ranged, pet
+# effects:  trigger START | TIMER | ON_HIT | ON_CRIT | ON_ATTACKED
+#           action  ARMOR THORNS HEAL HASTE EMPOWER LIFESTEAL MANA BLOCK BURN POISON CHILL STUN DAMAGE
+#           amount, chance (0..1), mana (стоимость), interval (для TIMER)
+items:
+
+  # ------------------------------------------------------------------ сумки
+  leather_pouch:
+    name: "Кожаный мешочек"
+    rarity: COMMON
+    category: BAG
+    material: BUNDLE
+    shape: ["XX", "XX"]
+    price: 3
+  long_tube:
+    name: "Длинный тубус"
+    rarity: COMMON
+    category: BAG
+    material: LIGHT_GRAY_BUNDLE
+    shape: ["XXXX"]
+    price: 3
+  corner_bag:
+    name: "Угловая сумка"
+    rarity: RARE
+    category: BAG
+    material: GREEN_BUNDLE
+    shape: ["X.", "X.", "XX"]
+    price: 4
+  satchel:
+    name: "Сумка-планшет"
+    rarity: RARE
+    category: BAG
+    material: BROWN_BUNDLE
+    shape: ["XXX", "XXX"]
+    price: 6
+  great_backpack:
+    name: "Большой рюкзак"
+    rarity: EPIC
+    category: BAG
+    material: RED_BUNDLE
+    shape: ["XXX", "XXX", "XXX"]
+    price: 10
+    rotatable: false
+
+  # ------------------------------------------------------------------ оружие
+  wooden_sword:
+    name: "Деревянный меч"
+    description: "Надёжный, хоть и простой."
+    rarity: COMMON
+    category: WEAPON
+    material: WOODEN_SWORD
+    shape: ["X", "X"]
+    price: 3
+    tags: [melee]
+    weapon: {damage: [3, 5], cooldown: 1.8, stamina: 1.0, accuracy: 0.85}
+  stone_axe:
+    name: "Каменный топор"
+    rarity: COMMON
+    category: WEAPON
+    material: STONE_AXE
+    shape: ["X", "X"]
+    price: 4
+    tags: [melee]
+    weapon: {damage: [5, 8], cooldown: 2.4, stamina: 1.3, accuracy: 0.8}
+  bow:
+    name: "Лук"
+    rarity: COMMON
+    category: WEAPON
+    material: BOW
+    shape: ["X", "X"]
+    price: 4
+    tags: [ranged, nature]
+    weapon: {damage: [3, 6], cooldown: 2.0, stamina: 0.8, accuracy: 0.75, ranged: true}
+  iron_sword:
+    name: "Железный меч"
+    description: "Пример предмета из ТЗ: размер 1×3."
+    rarity: RARE
+    category: WEAPON
+    material: IRON_SWORD
+    shape: ["X", "X", "X"]
+    price: 8
+    tags: [melee]
+    weapon: {damage: [7, 9], cooldown: 1.8, stamina: 1.2, accuracy: 0.85}
+  crossbow:
+    name: "Арбалет"
+    rarity: RARE
+    category: WEAPON
+    material: CROSSBOW
+    shape: ["XX"]
+    price: 7
+    tags: [ranged]
+    weapon: {damage: [6, 10], cooldown: 2.6, stamina: 1.0, accuracy: 0.75, crit: 0.10, ranged: true}
+  blaze_rod:
+    name: "Огненный стержень"
+    rarity: RARE
+    category: WEAPON
+    material: BLAZE_ROD
+    shape: ["X", "X"]
+    price: 6
+    tags: [magic, fire, ranged]
+    weapon: {damage: [4, 7], cooldown: 2.2, stamina: 0.8, accuracy: 0.8, ranged: true}
+    effects:
+      - {trigger: ON_HIT, action: BURN, amount: 2, mana: 2}
+  diamond_sword:
+    name: "Алмазный меч"
+    description: "Железный меч + алмаз рядом."
+    rarity: EPIC
+    category: WEAPON
+    material: DIAMOND_SWORD
+    shape: ["X", "X", "X"]
+    price: 16
+    in-shop: false
+    tags: [melee]
+    weapon: {damage: [14, 18], cooldown: 2.0, stamina: 1.4, accuracy: 0.85, crit: 0.05}
+  flame_staff:
+    name: "Посох пламени"
+    description: "Огненный стержень + осколок аметиста."
+    rarity: EPIC
+    category: WEAPON
+    material: BREEZE_ROD
+    shape: ["X", "X"]
+    price: 14
+    in-shop: false
+    tags: [magic, fire, ranged]
+    weapon: {damage: [8, 12], cooldown: 2.2, stamina: 0.8, accuracy: 0.8, ranged: true}
+    effects:
+      - {trigger: ON_HIT, action: BURN, amount: 3, mana: 2}
+      - {trigger: TIMER, action: MANA, amount: 2, interval: 2}
+  trident:
+    name: "Трезубец"
+    rarity: LEGENDARY
+    category: WEAPON
+    material: TRIDENT
+    shape: ["X", "X", "X"]
+    price: 16
+    tags: [ranged]
+    weapon: {damage: [14, 20], cooldown: 2.6, stamina: 1.3, accuracy: 0.75, ranged: true}
+    effects:
+      - {trigger: ON_HIT, action: CHILL, amount: 1}
+  netherite_axe:
+    name: "Незеритовый топор"
+    rarity: LEGENDARY
+    category: WEAPON
+    material: NETHERITE_AXE
+    shape: ["XX", "XX"]
+    price: 18
+    rotatable: false
+    tags: [melee]
+    weapon: {damage: [22, 28], cooldown: 3.0, stamina: 1.8, accuracy: 0.8}
+    effects:
+      - {trigger: ON_HIT, action: STUN, amount: 1, chance: 0.2}
+  mace:
+    name: "Булава"
+    rarity: MYTHIC
+    category: WEAPON
+    material: MACE
+    shape: ["X", "X"]
+    price: 24
+    tags: [melee]
+    weapon: {damage: [30, 40], cooldown: 3.4, stamina: 2.0, accuracy: 0.8}
+    effects:
+      - {trigger: ON_CRIT, action: STUN, amount: 2}
+
+  # ------------------------------------------------------------------ броня
+  leather_cap:
+    name: "Кожаный шлем"
+    rarity: COMMON
+    category: ARMOR
+    material: LEATHER_HELMET
+    price: 3
+    effects:
+      - {trigger: START, action: ARMOR, amount: 10}
+  shield:
+    name: "Щит"
+    rarity: COMMON
+    category: ARMOR
+    material: SHIELD
+    shape: ["XX", "XX"]
+    price: 5
+    rotatable: false
+    effects:
+      - {trigger: START, action: ARMOR, amount: 15}
+      - {trigger: ON_ATTACKED, action: BLOCK, amount: 3, chance: 0.3}
+  iron_chestplate:
+    name: "Железный нагрудник"
+    rarity: RARE
+    category: ARMOR
+    material: IRON_CHESTPLATE
+    shape: ["XX", "XX"]
+    price: 7
+    rotatable: false
+    effects:
+      - {trigger: START, action: ARMOR, amount: 30}
+  spiked_shield:
+    name: "Шипастый щит"
+    description: "Щит + кактус рядом."
+    rarity: EPIC
+    category: ARMOR
+    material: SHIELD
+    shape: ["XX", "XX"]
+    price: 12
+    in-shop: false
+    rotatable: false
+    effects:
+      - {trigger: START, action: ARMOR, amount: 25}
+      - {trigger: START, action: THORNS, amount: 3}
+      - {trigger: ON_ATTACKED, action: BLOCK, amount: 5, chance: 0.4}
+
+  # ------------------------------------------------------------------ еда и зелья
+  apple:
+    name: "Яблоко"
+    rarity: COMMON
+    category: FOOD
+    material: APPLE
+    price: 2
+    tags: [nature]
+    effects:
+      - {trigger: TIMER, action: HEAL, amount: 3, interval: 4}
+  honey_bottle:
+    name: "Бутылочка мёда"
+    rarity: COMMON
+    category: FOOD
+    material: HONEY_BOTTLE
+    price: 2
+    effects:
+      - {trigger: TIMER, action: HEAL, amount: 2, interval: 4}
+  golden_apple:
+    name: "Золотое яблоко"
+    description: "Яблоко + золотой слиток."
+    rarity: EPIC
+    category: FOOD
+    material: GOLDEN_APPLE
+    price: 9
+    in-shop: false
+    effects:
+      - {trigger: START, action: ARMOR, amount: 10}
+      - {trigger: TIMER, action: HEAL, amount: 8, interval: 5}
+  healing_potion:
+    name: "Зелье лечения"
+    rarity: RARE
+    category: POTION
+    material: POTION
+    price: 5
+    effects:
+      - {trigger: TIMER, action: HEAL, amount: 6, interval: 6}
+  swiftness_potion:
+    name: "Зелье скорости"
+    rarity: RARE
+    category: POTION
+    material: POTION
+    price: 5
+    effects:
+      - {trigger: START, action: HASTE, amount: 10}
+  strength_potion:
+    name: "Зелье силы"
+    rarity: EPIC
+    category: POTION
+    material: POTION
+    price: 8
+    effects:
+      - {trigger: START, action: EMPOWER, amount: 3}
+  poison_splash:
+    name: "Взрывное зелье яда"
+    rarity: RARE
+    category: POTION
+    material: SPLASH_POTION
+    price: 6
+    effects:
+      - {trigger: TIMER, action: POISON, amount: 1, interval: 4}
+
+  # ------------------------------------------------------------------ магия и материалы
+  amethyst_shard:
+    name: "Осколок аметиста"
+    rarity: COMMON
+    category: MAGIC
+    material: AMETHYST_SHARD
+    price: 3
+    tags: [magic]
+    effects:
+      - {trigger: TIMER, action: MANA, amount: 2, interval: 2}
+  cactus:
+    name: "Кактус"
+    rarity: COMMON
+    category: MATERIAL
+    material: CACTUS
+    price: 2
+    tags: [nature]
+    effects:
+      - {trigger: START, action: THORNS, amount: 1}
+  iron_ingot:
+    name: "Железный слиток"
+    rarity: COMMON
+    category: MATERIAL
+    material: IRON_INGOT
+    price: 2
+    effects:
+      - {trigger: START, action: ARMOR, amount: 4}
+  gold_ingot:
+    name: "Золотой слиток"
+    rarity: COMMON
+    category: MATERIAL
+    material: GOLD_INGOT
+    price: 2
+    effects:
+      - {trigger: START, action: HASTE, amount: 2}
+  diamond:
+    name: "Алмаз"
+    rarity: RARE
+    category: MATERIAL
+    material: DIAMOND
+    price: 5
+    effects:
+      - {trigger: START, action: EMPOWER, amount: 1}
+  totem:
+    name: "Тотем бессмертия"
+    rarity: MYTHIC
+    category: MAGIC
+    material: TOTEM_OF_UNDYING
+    shape: ["X", "X"]
+    price: 20
+    effects:
+      - {trigger: START, action: ARMOR, amount: 20}
+      - {trigger: TIMER, action: HEAL, amount: 12, interval: 8}
+
+  # ------------------------------------------------------------------ аксессуары и питомцы
+  clock:
+    name: "Часы"
+    rarity: RARE
+    category: ACCESSORY
+    material: CLOCK
+    price: 5
+    effects:
+      - {trigger: START, action: HASTE, amount: 5}
+  heart_of_sea:
+    name: "Сердце моря"
+    rarity: LEGENDARY
+    category: ACCESSORY
+    material: HEART_OF_THE_SEA
+    price: 14
+    effects:
+      - {trigger: START, action: LIFESTEAL, amount: 2}
+      - {trigger: START, action: ARMOR, amount: 10}
+  wolf_pup:
+    name: "Волчонок"
+    rarity: RARE
+    category: PET
+    material: BONE
+    price: 7
+    tags: [pet]
+    weapon: {damage: [3, 5], cooldown: 2.0, stamina: 0, accuracy: 0.85, pet: true}
+
+  # ------------------------------------------------------------------ предметы героев
+  guardian_shield:
+    name: "Щит стража"
+    description: "Уникальный предмет Бастиона."
+    rarity: UNIQUE
+    category: ARMOR
+    material: SHIELD
+    shape: ["XX", "XX"]
+    price: 10
+    hero: bastion
+    rotatable: false
+    effects:
+      - {trigger: START, action: ARMOR, amount: 40}
+      - {trigger: START, action: THORNS, amount: 2}
+      - {trigger: ON_ATTACKED, action: BLOCK, amount: 8, chance: 0.5}
+  frost_crystal:
+    name: "Ледяной кристалл"
+    rarity: RARE
+    category: MAGIC
+    material: BLUE_ICE
+    price: 5
+    hero: elma
+    tags: [magic, ice]
+    effects:
+      - {trigger: TIMER, action: CHILL, amount: 2, interval: 3, mana: 2}
+  elemental_staff:
+    name: "Стихийный посох"
+    description: "Уникальный предмет Эльмы."
+    rarity: UNIQUE
+    category: WEAPON
+    material: BREEZE_ROD
+    shape: ["X", "X", "X"]
+    price: 10
+    hero: elma
+    tags: [magic, fire, ice, ranged]
+    weapon: {damage: [8, 12], cooldown: 2.4, stamina: 0.8, accuracy: 0.8, ranged: true}
+    effects:
+      - {trigger: ON_HIT, action: BURN, amount: 2, mana: 3}
+      - {trigger: ON_HIT, action: CHILL, amount: 2, mana: 3}
+  bee:
+    name: "Пчела"
+    rarity: COMMON
+    category: PET
+    material: HONEYCOMB
+    price: 3
+    hero: bortnik
+    tags: [pet, swarm]
+    weapon: {damage: [2, 3], cooldown: 1.6, stamina: 0, accuracy: 0.85, pet: true}
+    effects:
+      - {trigger: ON_HIT, action: POISON, amount: 1, chance: 0.5}
+  beehive:
+    name: "Улей"
+    description: "Пчела + пчела + бутылочка мёда."
+    rarity: EPIC
+    category: PET
+    material: BEEHIVE
+    shape: ["XX", "XX"]
+    price: 10
+    hero: bortnik
+    in-shop: false
+    rotatable: false
+    tags: [pet, swarm]
+    weapon: {damage: [4, 6], cooldown: 1.4, stamina: 0, accuracy: 0.85, pet: true}
+    effects:
+      - {trigger: ON_HIT, action: POISON, amount: 1}
+  swarm_crown:
+    name: "Корона роя"
+    description: "Уникальный предмет Бортника."
+    rarity: UNIQUE
+    category: ACCESSORY
+    material: GOLDEN_HELMET
+    price: 10
+    hero: bortnik
+    tags: [swarm]
+    effects:
+      - {trigger: TIMER, action: POISON, amount: 2, interval: 3}
+  ancient_bow:
+    name: "Лук древнего леса"
+    description: "Уникальный предмет Сильвы."
+    rarity: UNIQUE
+    category: WEAPON
+    material: BOW
+    shape: ["X", "X", "X"]
+    price: 10
+    hero: silva
+    tags: [ranged, nature]
+    weapon: {damage: [8, 14], cooldown: 2.2, stamina: 0.9, accuracy: 0.8, crit: 0.15, ranged: true}
+    effects:
+      - {trigger: ON_CRIT, action: POISON, amount: 2}
+  hunter_quiver:
+    name: "Колчан охотницы"
+    rarity: RARE
+    category: ACCESSORY
+    material: SPECTRAL_ARROW
+    price: 5
+    hero: silva
+    tags: [ranged]
+    effects:
+      - {trigger: START, action: HASTE, amount: 3}
+      - {trigger: TIMER, action: DAMAGE, amount: 3, interval: 4}

@@ -1,0 +1,18 @@
+# Рецепты: ингредиенты должны лежать в рюкзаке рядом (касаться сторонами), образуя одну группу.
+# Крафт выполняется после боя. Заблокированные (Shift+клик) предметы не участвуют.
+recipes:
+  diamond_sword:
+    ingredients: [iron_sword, diamond]
+    result: diamond_sword
+  spiked_shield:
+    ingredients: [shield, cactus]
+    result: spiked_shield
+  golden_apple:
+    ingredients: [apple, gold_ingot]
+    result: golden_apple
+  flame_staff:
+    ingredients: [blaze_rod, amethyst_shard]
+    result: flame_staff
+  beehive:
+    ingredients: [bee, bee, honey_bottle]
+    result: beehive
